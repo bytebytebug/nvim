@@ -140,11 +140,28 @@ require('nvim-treesitter.configs').setup({
 })
 
 -- vim.cmd("colorscheme tokyonight-night")
--- vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7aa2f7", bold = true })
+-- vim.g.tokyonight_style = "night"
+
 
 -- vim.opt.background = "dark" -- set this to dark or light
 -- vim.cmd("colorscheme oxocarbon")
 
 -- vim.cmd("colorscheme catppuccin-mocha")
 
-vim.cmd("colorscheme moonfly")
+-- vim.cmd("colorscheme moonfly")
+
+
+-- Ajustes do tema
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_dark_float = false
+vim.g.tokyonight_dark_sidebar = false
+vim.g.tokyonight_lualine_bold = true
+vim.g.tokyonight_bold = true
+
+-- Carrega o tema
+vim.cmd("colorscheme tokyonight-night")
+
+-- Contraste extra manual
+vim.api.nvim_set_hl(0, "Normal", { bg = "#060608" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#060608" })
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7aa2f7", bold = true })

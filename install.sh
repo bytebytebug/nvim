@@ -5,6 +5,7 @@ set -euo pipefail
 npm install -g typescript typescript-language-server
 npm install -g pyright
 go install golang.org/x/tools/gopls@latest
+gem install ruby-lsp
 
 bash install-plugin.sh neovim/nvim-lspconfig      v2.5.0
 bash install-plugin.sh hrsh7th/nvim-cmp           v0.0.2

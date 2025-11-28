@@ -18,6 +18,15 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 
 
+vim.lsp.config('ruby_lsp', {
+  cmd = { 'ruby-lsp' },
+  filetypes = { 'ruby' },
+  root_markers = {'.git', 'Gemfile'}, 
+})
+
+vim.lsp.enable('ruby_lsp')
+
+
 vim.lsp.config('ts_ls', {
   cmd = { 'typescript-language-server', '--stdio' },
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },

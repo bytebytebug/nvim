@@ -163,5 +163,7 @@ vim.cmd("colorscheme tokyonight-night")
 
 -- Contraste extra manual
 vim.api.nvim_set_hl(0, "Normal", { bg = "#060608" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "#101018" })
+
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#060608" })
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7aa2f7", bold = true })

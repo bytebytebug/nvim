@@ -27,6 +27,21 @@ vim.lsp.config('ts_ls', {
 vim.lsp.enable('ts_ls')
 
 
+vim.lsp.config('gopls', {
+    cmd = { 'gopls' },  -- comando do servidor
+    filetypes = { 'go', 'gomod' },  -- tipos de arquivo
+    root_markers = {'.git', 'go.mod'},  -- arquivos que marcam a raiz do projeto
+    settings = { 
+        gopls = {
+            analyses = { unusedparams = true },
+            staticcheck = true,
+        }
+    }
+})
+
+vim.lsp.enable('gopls')
+
+
 vim.lsp.config('pyright', {
   cmd = { 'pyright-langserver', '--stdio' },
   filetypes = { 'python' },

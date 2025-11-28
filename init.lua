@@ -1,15 +1,16 @@
 -- Plugins
-vim.cmd [[
-  call plug#begin()
+-- vim.cmd [[
+--   call plug#begin()
 
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'L3MON4D3/LuaSnip'
-    Plug 'saadparwaiz1/cmp_luasnip'
-    
-  call plug#end()
-]]
+--     Plug 'neovim/nvim-lspconfig'
+--     Plug 'hrsh7th/nvim-cmp'
+--     Plug 'hrsh7th/cmp-nvim-lsp'
+--     Plug 'L3MON4D3/LuaSnip'
+--     Plug 'saadparwaiz1/cmp_luasnip'
+--     Plug 'preservim/nerdtree'
+
+--   call plug#end()
+-- ]]
 
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4

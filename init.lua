@@ -131,3 +131,18 @@ vim.keymap.set({"i", "s"}, "<C-k>", function() require("luasnip").expand() end)
 vim.keymap.set({"i", "s"}, "<S-k>", function() require("luasnip").jump(1) end)
 vim.keymap.set({"i", "s"}, "<S-l>", function() require("luasnip").jump(-1) end)
 
+
+require('nvim-treesitter.configs').setup({
+  highlight = {
+    enable = true,   
+    additional_vim_regex_highlighting = false,
+  },
+})
+
+vim.cmd("colorscheme tokyonight-night")
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7aa2f7", bold = true })
+
+-- vim.opt.background = "dark" -- set this to dark or light
+-- vim.cmd("colorscheme oxocarbon")
+
+-- vim.cmd("colorscheme catppuccin-mocha")

@@ -19,7 +19,8 @@ vim.opt.softtabstop = 4
 
 
 vim.lsp.config('ruby_lsp', {
-  cmd = { 'ruby-lsp' },
+  -- cmd = { 'ruby-lsp' },
+  cmd = { "bundle", "exec", "ruby-lsp" },
   filetypes = { 'ruby' },
   root_markers = {'.git', 'Gemfile'}, 
 })
@@ -30,7 +31,7 @@ vim.lsp.enable('ruby_lsp')
 vim.lsp.config('ts_ls', {
   cmd = { 'typescript-language-server', '--stdio' },
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
-  root_markers = {'.git', 'package.json', 'tsconfig.json'},
+  root_markers = {'tsconfig.json', 'package.json', '.git'},
 })
 
 vim.lsp.enable('ts_ls')
@@ -127,15 +128,43 @@ require("luasnip.loaders.from_lua").lazy_load({
   paths = "~/.config/nvim/lua/snippets"
 })
 
-vim.keymap.set({"i", "s"}, "<C-k>", function() require("luasnip").expand() end)
-vim.keymap.set({"i", "s"}, "<S-k>", function() require("luasnip").jump(1) end)
-vim.keymap.set({"i", "s"}, "<S-l>", function() require("luasnip").jump(-1) end)
+vim.keymap.set({"i", "s"}, "<C-j>", function() require("luasnip").expand() end)
+vim.keymap.set({"i", "s"}, "<C-k>", function() require("luasnip").jump(1) end)
+vim.keymap.set({"i", "s"}, "<c-l>", function() require("luasnip").jump(-1) end)
 
 
 require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,   
     additional_vim_regex_highlighting = false,
+  },
+  ensure_installed = {
+    -- Linguagens Ruby
+    "ruby",
+    "rbs",        -- Ruby Signature Files
+    "embedded_template", -- ERB interno (Neovim 0.10+)
+
+    -- Infra de projetos Ruby
+    "json",       -- gemspec, configs, bundler metadata
+    "yaml",       -- Rails, Hanami,configs
+    "toml",       -- .tool-versions, config, rubocop
+    "bash",       -- bin/setup, scripts
+    "lua",        -- se usa Neovim com lua (recomendado)
+    "make",       -- Makefile de C-extensions
+    "regex",      -- Highlight decente de regex Ruby
+
+    -- Web (se usa Rails / Hanami / Roda)
+    "html",       
+    "css",
+    "scss",
+    "javascript",
+    "typescript",
+    "tsx",
+
+    -- Testes
+    "rst",        -- documentação, readmes
+    "markdown",
+    "markdown_inline",
   },
 })
 

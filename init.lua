@@ -16,11 +16,29 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+vim.opt.breakindentopt = { "shift:4" }
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.showbreak = "↳"
+
+
+
+vim.lsp.config('jdtls', {
+  cmd = { 'jdtls' },
+  filetypes = { 'java' },
+  root_markers = {'.git'}, 
+})
+
+vim.lsp.enable('jdtls')
+
 
 
 vim.lsp.config('ruby_lsp', {
-  -- cmd = { 'ruby-lsp' },
-  cmd = { "bundle", "exec", "ruby-lsp" },
+  cmd = { 'ruby-lsp' },
+  -- cmd = { "bundler", "exec", "ruby-lsp" },
   filetypes = { 'ruby' },
   root_markers = {'.git', 'Gemfile'}, 
 })
@@ -196,3 +214,34 @@ vim.api.nvim_set_hl(0, "NormalNC", { bg = "#101018" })
 
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#060608" })
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7aa2f7", bold = true })
+
+
+--vim.api.nvim_set_hl(0, "IndentBlanklineChar", {
+--    fg = "#000000", -- Exemplo: um cinza um pouco mais escuro/claro
+--    nocombine = true -- Importante: não misturar com outros destaques
+--})
+
+
+vim.api.nvim_set_hl(0, "IndentBlanklineChar", {
+    fg = "#777777", -- Cor das guias
+    nocombine = true -- Impede mesclagem com o cursor/CursorLine
+})
+
+require("ibl").setup({
+    indent = {
+        -- char = "¦",
+        char = { "│", "¦" },
+    },
+
+    scope = {
+        enabled = false, 
+        show_start = false,
+    },
+    
+    -- Opções de renderização
+    exclude = {
+        filetypes = { "help", "terminal" }, 
+    }
+})
+
+

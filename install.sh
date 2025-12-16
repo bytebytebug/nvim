@@ -9,6 +9,7 @@ go install golang.org/x/tools/gopls@latest
 gem install ruby-lsp
 echo ""
 
+bash install-plugin.sh lukas-reineke/indent-blankline.nvim  v3.9.0
 bash install-plugin.sh bluz71/vim-moonfly-colors            master
 bash install-plugin.sh catppuccin/nvim                      v1.11.0
 bash install-plugin.sh nyoom-engineering/oxocarbon.nvim     main

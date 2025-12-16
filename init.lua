@@ -26,10 +26,19 @@ vim.opt.showbreak = "↳"
 
 
 
-vim.lsp.config('jdtls', {
-  cmd = { 'jdtls' },
+vim.lsp.config("jdtls", {
+  cmd = { 
+    "jdtls", 
+    "--jvm-arg=-javaagent:" .. os.getenv("HOME") .. "/.local/share/java/lombok/lombok.jar",
+    -- "--jvm-arg=-Xbootclasspath/a:" .. os.getenv("HOME") .. "/.local/share/java/lombok/lombok.jar",
+  },
   filetypes = { 'java' },
-  root_markers = {'.git'}, 
+  root_markers = {
+    ".git",
+    "pom.xml",
+    "build.gradle",
+    "build.gradle.kts",
+  }, 
 })
 
 vim.lsp.enable('jdtls')

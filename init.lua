@@ -253,4 +253,8 @@ require("ibl").setup({
     }
 })
 
+vim.api.nvim_create_user_command("TabsToSpaces", function(opts)
+  local spaces = tonumber(opts.args) or vim.o.shiftwidth
+  vim.cmd(string.format("%%s/\\t/%s/g", string.rep(" ", spaces)))
+end, { nargs = "?" })
 

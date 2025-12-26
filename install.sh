@@ -6,7 +6,7 @@ echo "Install language servers"
 npm install -g typescript typescript-language-server
 npm install -g pyright
 go install golang.org/x/tools/gopls@latest
-gem install ruby-lsp
+#gem install ruby-lsp
 echo ""
 
 bash install-plugin.sh lukas-reineke/indent-blankline.nvim  v3.9.0

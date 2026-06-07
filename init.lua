@@ -16,3 +16,4 @@ vim.opt.showbreak = "↳"
 
 
 require("themes")
+require("identation")

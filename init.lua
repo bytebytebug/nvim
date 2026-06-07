@@ -14,3 +14,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.showbreak = "↳"
 
+vim.opt.background = "dark" -- set this to dark or light
+vim.cmd("colorscheme oxocarbon")
+

@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# Use:
+#   ./install_plugin user/repo [tag]
+#
+# Exemplo:
+#   ./install_plugin hrsh7th/nvim-cmp v0.0.1
+#   ./install_plugin L3MON4D3/LuaSnip 
+#   ./install_plugin neovim/nvim-lspconfig
+
+
+# script configs
+set -euo pipefail
+
+
+# params
+FULL="$1"
+TAG="$2"
+
+
+# asset parameters or exit
+if [ -z "$FULL" ]; then
+    echo "Uso: $0 user/repo [tag]"
+    exit 1
+fi
+
+
+# parse USER and REPO
+USER="${FULL%%/*}"
+REPO="${FULL##*/}"
+
+
+# default tag/branch
+if [ -z "$TAG" ]; then
+    TAG="main"
+fi
+
+
+# set DEST
+# where to instakk the plugin
+DEST="$HOME/.config/nvim/pack/vendor/start/$REPO"
+
+# init message
+echo "==> Instaling https://github.com/$USER/$REPO ($TAG) at $DEST"
+
+
+# remove old instalations
+if [ -d "$DEST" ]; then
+    echo "remove old version..."
+    rm -rf "$DEST"
+fi
+
+
+# clonar com branch/tag
+echo "cloning..."
+git -c advice.detachedHead=false  clone \
+    --depth 1 \
+    -b "$TAG" \
+    --quiet \
+    "https://github.com/$USER/$REPO" "$DEST" >/dev/null
+
+
+# finish message
+echo "==> plugin installation completed successfully!"
+

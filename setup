@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "==> install runtimes and tools"
+
+mise install node@24 1>/dev/null 2>/dev/null
+mise install go@1 1>/dev/null 2>/dev/null
+mise install ruby@4 1>/dev/null 2>/dev/null 
+
+mise use -g node@24 1>/dev/null 2>/dev/null
+mise use -g go@1 1>/dev/null 2>/dev/null
+mise use -g ruby@4 1>/dev/null 2>/dev/null
+
+echo "==> install neovim plugins"
+# ./install_plugin neoclide/coc.nvim                    v0.0.82
+./install_plugin lukas-reineke/indent-blankline.nvim  v3.9.1
+# ./install_plugin bluz71/vim-moonfly-colors            master
+# ./install_plugin catppuccin/nvim                      v1.11.0 # see v2.0.0
+./install_plugin nyoom-engineering/oxocarbon.nvim     main
+# ./install_plugin folke/tokyonight.nvim                v4.14.1
+# ./install_plugin nvim-treesitter/nvim-treesitter      v0.10.0
+# ./install_plugin neovim/nvim-lspconfig                v2.5.0
+# ./install_plugin hrsh7th/nvim-cmp                     v0.0.2
+# ./install_plugin hrsh7th/cmp-nvim-lsp                 main
+# ./install_plugin L3MON4D3/LuaSnip                     v2.4.1
+# ./install_plugin saadparwaiz1/cmp_luasnip             master
+./install_plugin preservim/nerdtree                   7.0.1
+
+echo "==> finish setup"

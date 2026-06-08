@@ -14,6 +14,12 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.showbreak = "↳"
 
+vim.opt.completeopt = {
+  "menu",
+  "menuone",
+  "noinsert",
+  "noselect",
+}
 
 require("themes")
 require("identation")

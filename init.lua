@@ -17,3 +17,7 @@ vim.opt.showbreak = "↳"
 
 require("themes")
 require("identation")
+
+require("lsp.commands")
+require("lsp.ruby")
+require("lsp.typescript")

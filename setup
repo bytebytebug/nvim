@@ -12,6 +12,9 @@ mise use -g node@24 1>/dev/null 2>/dev/null
 mise use -g go@1 1>/dev/null 2>/dev/null
 mise use -g ruby@4 1>/dev/null 2>/dev/null
 
+gem install ruby-lsp
+npm install -g typescript typescript-language-server
+
 echo "==> install neovim plugins"
 # ./install_plugin neoclide/coc.nvim                    v0.0.82
 ./install_plugin lukas-reineke/indent-blankline.nvim  v3.9.1
@@ -21,7 +24,7 @@ echo "==> install neovim plugins"
 # ./install_plugin folke/tokyonight.nvim                v4.14.1
 # ./install_plugin nvim-treesitter/nvim-treesitter      v0.10.0
 # ./install_plugin neovim/nvim-lspconfig                v2.5.0
-# ./install_plugin hrsh7th/nvim-cmp                     v0.0.2
+./install_plugin hrsh7th/nvim-cmp                     v0.0.2
 # ./install_plugin hrsh7th/cmp-nvim-lsp                 main
 # ./install_plugin L3MON4D3/LuaSnip                     v2.4.1
 # ./install_plugin saadparwaiz1/cmp_luasnip             master

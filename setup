@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+# set -euo pipefail
 
 echo "==> install runtimes and tools"
 
 mise install node@24 1>/dev/null 2>/dev/null
 mise install go@1 1>/dev/null 2>/dev/null
 mise install ruby@4 1>/dev/null 2>/dev/null 
-mise install rust@1 1>/dev/null 2>/dev/null 
+# mise install rust@1 1>/dev/null 2>/dev/null 
 
 mise use -g node@24 1>/dev/null 2>/dev/null
 mise use -g go@1 1>/dev/null 2>/dev/null
 mise use -g ruby@4 1>/dev/null 2>/dev/null
-mise use -g rust@1 1>/dev/null 2>/dev/null
+# mise use -g rust@1 1>/dev/null 2>/dev/null
 
 gem install ruby-lsp
 npm install -g typescript typescript-language-server
